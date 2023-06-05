@@ -1,0 +1,300 @@
+body 
+{
+  font-family: Arial, sans-serif;
+  background-image: url("source/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size:cover;
+  margin: 0;
+  padding: 0;
+}
+h1
+{
+  font-family: "Arial", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(18, 123, 63, 0.269);
+}
+#home-container 
+{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  width: 60%;
+  flex-direction: column; /* Add this line to align items vertically */
+  margin:auto;
+  background: rgba(255, 255, 255, 0.648); 
+  padding: 20px;
+  box-shadow: 10px 10px 5px rgb(69, 77, 80);
+}
+
+#home-border
+{
+  display:inline-block ;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  align-items: center; /* Add this line to center the content vertically */
+  flex-direction: column; /* Add this line to align items vertically */
+  padding: 20px;
+  display: flex;
+
+}
+
+#player-container
+{
+  text-align: right;
+  display: flex;
+  align-items: center; /* Add this line to center the content vertically */
+  width : 70%;
+  height: 35px;
+}
+#player-container input {
+  border: 5px solid rgba(20, 210, 23, 0.785) !important;
+  border-left-style: solid !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right-style: none !important;
+  margin-top: 20px;
+  border-radius: 3px;
+  border-color: rgb(204, 203, 202);
+  right: 20%;
+  left: 20%;
+  box-shadow: 10px 10px 5px rgb(69, 77, 80);
+  list-style-position: inside;
+}
+#cards-number-container 
+{
+  text-align: right;
+  display: flex;
+  align-items: center; /* Add this line to center the content vertically */
+  width : 70%;
+  height: 35px;
+}
+#cards-number-container input  {
+  border: 5px solid rgba(20, 210, 23, 0.785) !important;
+  border-left-style: solid !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right-style: none !important;
+  margin-top: 50px;
+  border-radius: 3px;
+  border-color: rgb(204, 203, 202);
+  right: 20%;
+  left: 20%;
+  box-shadow: 10px 10px 5px rgb(69, 77, 80);
+  list-style-position: inside;
+}
+
+label {font-weight: bold;}    
+
+#game-container 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#start-container
+{
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 10px 20px;
+}
+
+#start-container button
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0a961a8f;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#start-container button:hover
+{
+background-color: #457fa0;
+}
+    
+#player-name-display{
+  font-size: 20px;
+  font-weight: bold;
+  top: 20px;
+  left: 0px;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 0 10px 10px 0;
+}
+#timer {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 0 10px 10px 0;
+}
+
+#game-board
+ {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Add this line to center the cards horizontally */
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.card
+ {
+  position: relative;
+  width: 140px;
+  height: 210px;
+  margin: 5px;
+  perspective: 800px;
+  cursor: pointer;
+  border-radius: 10px; 
+  border-style: none;
+  background-color: transparent; /* Set the background color to transparent */
+}
+
+.card-inner
+ {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 10px; 
+  
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+  border-radius: 10px; 
+
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px; 
+
+}
+
+.card-front {
+  background-image: url("source/cardfront.png");
+  border-radius: 10px; 
+
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  border-radius: 10px; 
+  
+}
+
+.number {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+
+}
+
+.card.flipped .number {
+  display: block;
+}
+
+#game-over-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.648);
+  padding: 20px;
+  text-align: center;
+}
+
+#game-over-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#restart-button {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  padding: 10px 20px;
+}
+
+
+.blue-light 
+{
+  box-shadow: 0 0 10px rgb(0, 98, 128);
+}
+
+.shake {
+  animation: shakeAnimation 0.3s infinite;
+}
+
+@keyframes shakeAnimation {
+  
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+
+.card.freeze {
+  pointer-events: none; /* Disable click events during freezing */
+  animation-duration: 2s; /* Duration of freezing animation */
+  animation-fill-mode: forwards; /* Keep the last keyframe state after animation */
+}
+
+@keyframes freeze-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card.freeze .card-inner {
+  animation-name: freeze-animation; /* Apply the freeze animation to the card inner element */
+}
+
+
+
+
+
+
+
